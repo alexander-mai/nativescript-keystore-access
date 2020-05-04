@@ -1,12 +1,12 @@
-var KeystoreAccess = require("nativescript-keystore-access").KeystoreAccess;
-var keystoreAccess = new KeystoreAccess();
+var YourPlugin = require("nativescript-yourplugin").YourPlugin;
+var yourPlugin = new YourPlugin();
 
 describe("greet function", function() {
     it("exists", function() {
-        expect(keystoreAccess.available).toBeDefined();
+        expect(yourPlugin.greet).toBeDefined();
     });
 
     it("returns a string", function() {
-        expect(keystoreAccess.available()).toBeDefined();
+        expect(yourPlugin.greet()).toEqual("Hello, NS");
     });
 });

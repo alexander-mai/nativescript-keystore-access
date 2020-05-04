@@ -3,7 +3,6 @@ export interface BiometricIDAvailableResult {
     touch?: boolean;
     face?: boolean;
     reason?: string;
-    customUI: boolean; // Returns true if you need to show your own biometrics UI
 }
 
 export enum ERROR_CODES {
@@ -24,19 +23,14 @@ export interface KeystoreAccessApi {
     available(): Promise<BiometricIDAvailableResult>;
 
     /**
-     * Returns true if you need to show your own biometrics UI.
-     */
-    useCustomUI(): boolean;
-
-    /**
      * Stores your "data" in a safe storage that is encrypted with your biometrics.
      */
-    storeDataWithFingerprint(keystoreKeyAlias: string, data: string, biometricMessage: string): Promise<void>;
+    storeDataWithFingerprint(keystoreKeyAlias: string, data: string, dialogText: { title: string, negativeButton: string }): Promise<void>;
 
     /**
      * Retreives your previously stored data in unencrypted form.
      */
-    retrieveDataWithFingerprint(keystoreKeyAlias: string, biometricPromptMessage: string): Promise<string>;
+    retrieveDataWithFingerprint(keystoreKeyAlias: string, dialogText: { title: string, negativeButton: string }): Promise<string>;
 
     /**
      * Check if you have previously stored data.

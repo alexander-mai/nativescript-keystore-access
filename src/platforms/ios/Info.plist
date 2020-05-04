@@ -3,7 +3,5 @@
 <plist version="1.0">
 <dict>
 	<!--Describe the permissions, features or other configurations required by your plugin for iOS.-->
-	<key>NSFaceIDUsageDescription</key>
-	<string>This allows you to securely sing in to your app</string>
 </dict>
 </plist>

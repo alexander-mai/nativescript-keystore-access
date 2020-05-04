@@ -9,9 +9,9 @@ var class_name,
         github_username: undefined,
         init_git: undefined
     },
-    seed_plugin_name = "keystoreAccess",
-    seed_class_name = "KeystoreAccess",
-    seed_demo_property_name = "keystoreAccess",
+    seed_plugin_name = "yourplugin",
+    seed_class_name = "YourPlugin",
+    seed_demo_property_name = "yourPlugin",
     seed_github_username = "YourName",
     demo_folder = "../demo",
     screenshots_dir = "../screenshots",
@@ -76,7 +76,7 @@ function askPluginName() {
     } else {
         prompt.get({
             name: 'plugin_name',
-            description: 'What will be the name of your plugin? Use lowercase characters and dashes only. Example: keystoreAccess / google-maps / bluetooth'
+            description: 'What will be the name of your plugin? Use lowercase characters and dashes only. Example: yourplugin / google-maps / bluetooth'
         }, function (err, result) {
             if (err) {
                 return console.log(err);
